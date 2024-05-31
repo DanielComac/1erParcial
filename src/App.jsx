@@ -79,8 +79,8 @@ const App = () => {
       </div>
       <StudentSection
         name="Nombre del Alumno"
-        photoUrl="/path/to/photo.jpg"
-        resumeUrl="/path/to/resume.pdf"
+        photoUrl=""
+        resumeUrl=""
       />
     </div>
   );
