@@ -1,4 +1,3 @@
-// src/App.jsx
 import React from 'react';
 import Conceptos from './components/Conceptos';
 import StudentSection from './components/SeccionEstudiantes';
