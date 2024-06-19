@@ -2,87 +2,24 @@ import React from 'react';
 import Conceptos from './components/Conceptos';
 import StudentSection from './components/SeccionEstudiantes';
 import './App.css';
-
-const concepts = [
-  {
-    title: 'Administración',
-    definitions: [
-      'Definición 1 de administración...',
-      'Definición 2 de administración...',
-      'Definición 3 de administración...',
-    ],
-  },
-  {
-    title: 'Administración de Proyectos',
-    definitions: [
-      'Definición 1 de administración de proyectos...',
-      'Definición 2 de administración de proyectos...',
-    ],
-  },
-  {
-    title: 'Negociación',
-    definitions: [
-      'Concepto 1 de negociación...',
-      'Concepto 2 de negociación...',
-    ],
-  },
-  {
-    title: 'Proceso Administrativo',
-    definitions: [
-      'Descripción del proceso administrativo...',
-    ],
-  },
-  {
-    title: 'Manipulación',
-    definitions: [
-      'Concepto 1 de manipulación...',
-      'Concepto 2 de manipulación...',
-    ],
-  },
-  {
-    title: 'Eficacia',
-    definitions: [
-      'Definición de eficacia...',
-    ],
-  },
-  {
-    title: 'Eficiencia',
-    definitions: [
-      'Definición de eficiencia...',
-    ],
-  },
-  {
-    title: 'Riesgos en Proyectos',
-    definitions: [
-      'Definición 1 de riesgos...',
-      'Definición 2 de riesgos...',
-      'Definición 3 de riesgos...',
-      'Definición 1 de riesgos en proyectos...',
-      'Definición 2 de riesgos en proyectos...',
-      'Modelo de creación propia...',
-    ],
-  },
-];
+import Sidebar from './components/Sidebar';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 const App = () => {
   return (
-    <div className="app">
-      <h1>Conceptos de Administración y Proyectos</h1>
-      <div className="concepts-container">
-        {concepts.map((concept, index) => (
-          <Conceptos
-            key={index}
-            title={concept.title}
-            definitions={concept.definitions}
-          />
-        ))}
+    <Router>
+      <div className="app relative">
+        <Sidebar />
+        <main className="ml-80">
+          <Routes>
+            {/* Ajusta la ruta base aquí */}
+            <Route path="/proyecto/" element={<Navigate replace to="/proyecto/conceptos/administracion" />} />
+            <Route path="/proyecto/conceptos/:concept" element={<Conceptos />} />
+            <Route path="/proyecto/alumnos" element={<StudentSection />} />
+          </Routes>
+        </main>
       </div>
-      <StudentSection
-        name="Nombre del Alumno"
-        photoUrl=""
-        resumeUrl=""
-      />
-    </div>
+    </Router>
   );
 };
 
