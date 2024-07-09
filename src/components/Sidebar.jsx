@@ -39,6 +39,7 @@ const Sidebar = () => {
                         )}
                     </li>
                     <li><Link to="/proyecto/alumnos" className="block py-2 px-4 rounded hover:bg-gray-700 text-white font-bold">Alumnos</Link></li>
+                    <li><Link to="/proyecto/calculadoras" className="block py-2 px-4 rounded hover:bg-gray-700 text-white font-bold bg-[#007BFF]">CALCULADORAS</Link></li>
                 </ul>
             </nav>
         </aside>

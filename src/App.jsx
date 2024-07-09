@@ -4,6 +4,7 @@ import StudentSection from './components/SeccionEstudiantes';
 import './App.css';
 import Sidebar from './components/Sidebar';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Calculadoras from './components/Calculadoras';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
             <Route path="/proyecto/" element={<Navigate replace to="/proyecto/conceptos/administracion" />} />
             <Route path="/proyecto/conceptos/:concept" element={<Conceptos />} />
             <Route path="/proyecto/alumnos" element={<StudentSection />} />
+            <Route path="/proyecto/calculadoras" element={<Calculadoras />} />
           </Routes>
         </main>
       </div>
